@@ -48,7 +48,7 @@ test:
 #
 production:
   <<: *default
-  host: Settings[:db][:host]
-  port: Settings[:db][:port]
-  username: Settings[:db][:username]
-  password: Settings[:db][:password]
+  host: <%= Settings[:db][:host] %>
+  port: <%= Settings[:db][:port] %>
+  username: <%= Settings[:db][:username] %>
+  password: <%= Settings[:db][:password] %>
