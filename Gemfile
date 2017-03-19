@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'mysql2'
 
 gem 'dotenv-rails'
-
+gem 'config'
 gem 'feedjira'
 
 gem 'bootstrap-sass'

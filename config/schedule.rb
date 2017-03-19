@@ -30,6 +30,7 @@ set :environment, rails_env
 
 # 一時間毎のスケジューリング
 every :hour do # Many shortcuts available: :hour, :day, :month, :year, :reboot
+# every '*/1 * * * *' do
   rake 'update_gigazine_feed:exec'
   rake 'update_cnet_feed:exec'
   rake 'update_appgiga_feed:exec'

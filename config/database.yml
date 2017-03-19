@@ -13,7 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  database: matome
+  database: engineee
   username: root
   password:
   socket: /tmp/mysql.sock
@@ -48,5 +48,7 @@ test:
 #
 production:
   <<: *default
-  username: --skip-test-unit
-  password: <%= ENV['--SKIP-TEST-UNIT_DATABASE_PASSWORD'] %>
+  host: Settings[:db][:host]
+  port: Settings[:db][:port]
+  username: Settings[:db][:username]
+  password: Settings[:db][:password]
