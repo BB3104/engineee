@@ -1,0 +1,124 @@
+.tab-container {
+    overflow-x: auto;
+}
+
+.tab-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.tab {
+    display: table;
+}
+
+.tab__button {
+    display: table-cell;
+    text-align: center;
+    background-color: #eee;
+    vertical-align: middle;
+    min-width: 80px;
+    padding-top: 3px;
+}
+
+.tab__button.active {
+    color: #fff;
+    // background-color: #333;
+}
+
+.tab__button a {
+    padding: 10px;
+    color: #000;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav {
+    left: 0;
+    z-index: 100000;
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    background-color: #eee;
+    padding: 16px 0 6px 0;
+    height: 65px;
+}
+
+#global-navi {
+    width: 100%;
+    background: #eee;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.tab__button:after {
+    display: block;
+    width: 100%;
+    height: 6px;
+    content: "";
+    position: absolute;
+    // bottom: -5px;
+    left: 0;
+}
+
+.tab__button_current {
+    a {
+        color: #fff;
+        // @include border-radius(2px);
+    }
+}
+
+.tab__button:nth-child(1).tab__button_current,
+.tab__button:nth-child(1).tab__button_current:after {
+    background: $tab-color-newarrival;
+}
+.tab__button:nth-child(2).tab__button_current,
+.tab__button:nth-child(2).tab__button_current:after {
+    background: $tab-color-getnews;
+}
+.tab__button:nth-child(3).tab__button_current,
+.tab__button:nth-child(3).tab__button_current:after {
+    background: $tab-color-appgiga;
+}
+.tab__button:nth-child(4).tab__button_current,
+.tab__button:nth-child(4).tab__button_current:after {
+    background: $tab-color-codezine;
+}
+.tab__button:nth-child(5).tab__button_current,
+.tab__button:nth-child(5).tab__button_current:after {
+    background: $tab-color-nelog;
+}
+.tab__button:nth-child(6).tab__button_current,
+.tab__button:nth-child(6).tab__button_current:after {
+    background: $tab-color-buildinsider;
+}
+.tab__button:nth-child(7).tab__button_current,
+.tab__button:nth-child(7).tab__button_current:after {
+    background: $tab-color-itmedia;
+}
+.tab__button:nth-child(8).tab__button_current,
+.tab__button:nth-child(8).tab__button_current:after {
+    background: $tab-color-gigazine;
+}
+.tab__button:nth-child(9).tab__button_current,
+.tab__button:nth-child(9).tab__button_current:after {
+    background: $tab-color-techcrunch;
+}
+.tab__button:nth-child(10).tab__button_current,
+.tab__button:nth-child(10).tab__button_current:after {
+    background: $tab-color-engaget;
+}
+.tab__button:nth-child(11).tab__button_current,
+.tab__button:nth-child(11).tab__button_current:after {
+    background: $tab-color-cnet;
+}
+.tab__button:nth-child(12).tab__button_current,
+.tab__button:nth-child(12).tab__button_current:after {
+    background: $tab-color-itmatome;
+}

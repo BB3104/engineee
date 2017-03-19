@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_buildinsiders.each do |buildinsider| %>
+    <div class="item-list">
+      <% if buildinsider.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(buildinsider.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(buildinsider.title, buildinsider.url)%>
+            </div>
+            <div class="list-date">
+                <%= buildinsider.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(buildinsider.description) %>
+    </div>
+    <%end%>
+</div>

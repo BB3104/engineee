@@ -1,0 +1,21 @@
+<div class="items">
+    <% @new_arrivals[0...from_cnt].each do |arrival| %>
+    <div class="item-list">
+      <% if arrival.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(arrival.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(arrival.title, arrival.url)%>
+            </div>
+            <div class="list-date">
+                <%= arrival.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(techcrunch.description) %>
+    </div>
+    <%end%>
+</div>

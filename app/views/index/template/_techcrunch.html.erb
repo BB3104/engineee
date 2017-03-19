@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_techcrunchs.each do |techcrunch| %>
+    <div class="item-list">
+      <% if techcrunch.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(techcrunch.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(techcrunch.title, techcrunch.url)%>
+            </div>
+            <div class="list-date">
+                <%= techcrunch.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(techcrunch.description) %>
+    </div>
+    <%end%>
+</div>

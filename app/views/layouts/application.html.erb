@@ -1,14 +1,75 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>SkipTestUnit</title>
-    <%= csrf_meta_tags %>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <title>IT速報 Engineee</title>
+        <%= csrf_meta_tags %>
+        <meta name="description" content="IT情報を配信するアンテナサイト「IT速報 Engineee」です">
+        <link rel="canonical" href="http://xxx.com">
+        <link rel="icon" href="/icon/favicon.ico">
+        <link rel="apple-touch-icon" href="/icon/icon.png">
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+        <%= javascript_include_tag 'application' %>
+    </head>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+    <body>
+        <div></div>
+        <div id="global-navi">
+            <header class="header">
+                <div id="top">
+                    <h1>IT速報 Engineee</h1>
+                </div>
+            </header>
+            <nav class="tab-container nav">
+                <div class="tab">
+                    <div class="tab__button active tab__button_current">
+                        <a href="#">新着</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">ガジェット通信</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">アプギガ!!</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">Codezine</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">寝ログ</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">Buildinsider</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">ITmedia</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">Gigazine</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">Techcrunch</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">Engadget</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">Cnet</a>
+                    </div>
+                    <div class="tab__button">
+                        <a href="#">まとめニュース</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <article>
+        <div class="container">
 
-  <body>
-    <%= yield %>
-  </body>
+            <%= yield %>
+        </div>
+    </article>
+    <p id="page-top"><a href="#wrap">PAGE TOP</a></p>
+    <footer class="footer"></footer>
+</body>
 </html>

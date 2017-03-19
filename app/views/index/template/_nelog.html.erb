@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_nelogs.each do |nelog| %>
+    <div class="item-list">
+      <% if nelog.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(nelog.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(nelog.title, nelog.url)%>
+            </div>
+            <div class="list-date">
+                <%= nelog.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(nelog.description) %>
+    </div>
+    <%end%>
+</div>

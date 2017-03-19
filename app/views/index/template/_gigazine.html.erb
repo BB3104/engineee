@@ -1,0 +1,20 @@
+<div class="items">
+    <% @rss_gigazines.each do |gigazine| %>
+    <div class="item-list">
+      <% if gigazine.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(gigazine.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(gigazine.title, gigazine.url)%>
+            </div>
+            <div class="list-date">
+                <%= gigazine.content_published_at %>
+            </div>
+        </div>
+    </div>
+    <%end%>
+</div>

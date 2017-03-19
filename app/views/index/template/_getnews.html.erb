@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_getnews.each do |getnews| %>
+    <div class="item-list">
+      <% if getnews.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(getnews.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(getnews.title, getnews.url)%>
+            </div>
+            <div class="list-date">
+                <%= getnews.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(getnews.description) %>
+    </div>
+    <%end%>
+</div>

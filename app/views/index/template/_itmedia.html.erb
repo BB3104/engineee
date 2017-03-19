@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_itmedias.each do |itmedia| %>
+    <div class="item-list">
+      <% if itmedia.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(itmedia.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(itmedia.title, itmedia.url)%>
+            </div>
+            <div class="list-date">
+                <%= itmedia.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(itmedia.description) %>
+    </div>
+    <%end%>
+</div>

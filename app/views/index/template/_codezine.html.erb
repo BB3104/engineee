@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_codezines.each do |codezine| %>
+    <div class="item-list">
+      <% if codezine.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(codezine.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(codezine.title, codezine.url)%>
+            </div>
+            <div class="list-date">
+                <%= codezine.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(codezine.description) %>
+    </div>
+    <%end%>
+</div>

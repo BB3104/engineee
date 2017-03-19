@@ -41,12 +41,23 @@ gem 'dotenv-rails'
 
 gem 'feedjira'
 
+gem 'bootstrap-sass'
+gem "compass-rails"
+gem 'nokogiri'
+# memcache client
+gem 'dalli'
+
+# crontab管理
+gem 'whenever', require: false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # gem 'better_errors'
   # gem 'binding_of_caller'
   gem 'pry-byebug'
+
+  gem 'bullet'
 end
 
 group :development do

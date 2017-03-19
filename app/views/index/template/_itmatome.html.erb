@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_itmatomes.each do |itmatome| %>
+    <div class="item-list">
+      <% if itmatome.content.present? %>
+        <div class="list-thumb">
+          <%= raw(itmatome.content) %>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(itmatome.title, itmatome.url)%>
+            </div>
+            <div class="list-date">
+                <%= itmatome.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(itmatome.description) %>
+    </div>
+    <%end%>
+</div>

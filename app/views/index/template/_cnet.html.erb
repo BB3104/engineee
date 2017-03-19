@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_cnets.each do |cnet| %>
+    <div class="item-list">
+      <% if cnet.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(cnet.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(cnet.title, cnet.url)%>
+            </div>
+            <div class="list-date">
+                <%= cnet.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(cnet.description) %>
+    </div>
+    <%end%>
+</div>

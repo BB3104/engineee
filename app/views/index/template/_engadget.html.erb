@@ -1,0 +1,20 @@
+<div class="items">
+    <% @rss_engadgets.each do |engadget| %>
+    <div class="item-list">
+      <% if engadget.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(engadget.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(engadget.title, engadget.url)%>
+            </div>
+            <div class="list-date">
+                <%= engadget.content_published_at %>
+            </div>
+        </div>
+    </div>
+    <%end%>
+</div>

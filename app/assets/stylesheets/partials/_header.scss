@@ -1,0 +1,24 @@
+/*------------------------------------------------------------
+	ヘッダー
+------------------------------------------------------------*/
+header {
+	width: 100%;
+	overflow: hidden;
+}
+/*	タイトル	*/
+#top h1 {
+	margin: 0;
+	background-image: -moz-linear-gradient(top, #434641, #292b27);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#434641), to(#292b27));
+	background-image: -o-linear-gradient(top, #434641, #292b27);
+	background-image: linear-gradient(top, #434641, #292b27);
+	width: 100%;
+	padding: 3% 10px;
+	border-bottom: solid 1px #11120F;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #11120F;
+}
+/*	ヘッダー画像下 文字	*/
+header h2 {
+	padding: 10px;
+}
