@@ -1,4 +1,5 @@
-# Puma can serve each request in a thread from an internal thread pool.
+RAILS_ROOT = Dir.pwd
+#  Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers a minimum and maximum.
 # Any libraries that use thread pools should be configured to match
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
@@ -45,3 +46,8 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
+
+bind "unix://#{RAILS_ROOT}/tmp/sockets/puma.sock"
+pidfile "#{RAILS_ROOT}/tmp/pids/puma.pid"
+state_path "#{RAILS_ROOT}/tmp/pids/puma.state"
