@@ -51,7 +51,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  config.cache_store = :dalli_store, 'localhost:11211', { namespace: 'app', expires_in: 1.day, compress: true
+  config.cache_store = :dalli_store, 'localhost:11211', { namespace: 'app', expires_in: 1.day, compress: true }
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "--skip-test-unit_#{Rails.env}"
