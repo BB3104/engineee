@@ -2,8 +2,8 @@ require 'feedjira'
 namespace :update_itmatome_feed do
   task exec: :environment do
     #RSSを取得する
-    url = 'http://www.xn--o9j0bk8t7cqhlg.com/rss/atom.xml'
-
+    url_lists = ['http://www.xn--o9j0bk8t7cqhlg.com/rss/atom.xml','http://blog.livedoor.jp/itsoku/index.rdf']
+    url_lists.each do |url|
     feed = Feedjira::Feed.fetch_and_parse(url)
 
     feed.entries.each do |entry|
@@ -11,15 +11,24 @@ namespace :update_itmatome_feed do
       rss_itmatome = RssItmatome.find_or_initialize_by(url: entry.url)
       # item.save(:title => entry.title, content: entry.content, author: entry.author, url: entry.url, published: entry.published)
 
-            parsed_html = Nokogiri::HTML.fragment(entry.summary, 'utf-8')
-            # 画像のファイル名を取得
-            image_url = ""
-            images = parsed_html.css('img')
-            if images.present?
-              images.each do |image|
-                image_url = image.attributes["src"].value
-              end
-            end
+      parsed_html = Nokogiri::HTML.fragment(entry.summary, 'utf-8')
+      # 画像のファイル名を取得
+      image_url = ""
+      images = parsed_html.css('img')
+      if images.present?
+        images.each do |image|
+          image_url = image.attributes["src"].value
+        end
+      end
+      parsed_html = Nokogiri::HTML.fragment(entry.content, 'utf-8')
+      # 画像のファイル名を取得
+      image_url = ""
+      images = parsed_html.css('img')
+      if images.present?
+        images.each do |image|
+          image_url = image.attributes["src"].value
+        end
+      end
       # p entry
       # p entry.title
       # p entry.content
@@ -41,5 +50,6 @@ namespace :update_itmatome_feed do
       rss_itmatome.content_updated_at = entry.updated
       rss_itmatome.save
     end
+  end
   end
 end
