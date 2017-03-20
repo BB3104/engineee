@@ -15,13 +15,19 @@ $(document).ready(function() {
     *******************************************/
 
     var slider = $('.article-list').bxSlider({
+        speed: 300,
         pager: false,
         controls: false,
         touchEnabled: true, // モバイルのスワイプ
-        swipeThreshold: 120, //スワイプ操作として処理される最小の移動距離
+        // swipeThreshold: 110, //スワイプ操作として処理される最小の移動距離
         onSlideBefore: function($slideElement, oldIndex, newIndex) {
             //スライドする時に関数を呼び出す。newIndexはスライダーの現在地。
             slideChange(newIndex);
+
+        },
+        onSlideAfter: function($slideElement, oldIndex, newIndex) {
+            // 高さ調整
+            set_height();
         }
     });
 
@@ -48,8 +54,6 @@ $(document).ready(function() {
         } else {
             history.replaceState(null, 'title', location.protocol + '//' + location.host + location.pathname + location.search);
         };
-        // 高さ調整
-        set_height();
     }
 
     /******************************************
@@ -96,5 +100,5 @@ $(document).ready(function() {
                 $('.bx-viewport').css('height', $(this).height())
             }
         });
-    }
+    };
 });
