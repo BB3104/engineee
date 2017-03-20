@@ -43,9 +43,9 @@ $(document).ready(function() {
         $('.tab-container').animate({
             scrollLeft: scrollDestination
         }, 'slow');
-        if (nth != 0){
+        if (nth != 0) {
             history.replaceState(null, 'title', location.protocol + '//' + location.host + location.pathname + location.search + '#tab-' + nth);
-        }else{
+        } else {
             history.replaceState(null, 'title', location.protocol + '//' + location.host + location.pathname + location.search);
         };
     }
@@ -62,21 +62,16 @@ $(document).ready(function() {
         slider.goToSlide(nth);
 
         $(this).addClass("tab__button_current");
-        if (nth != 0){
+        if (nth != 0) {
             history.replaceState(null, 'title', location.protocol + '//' + location.host + location.pathname + location.search + '#tab-' + nth);
-        }else{
+        } else {
             history.replaceState(null, 'title', location.protocol + '//' + location.host + location.pathname + location.search);
         };
         //クリックイベントを無効化
         e.preventDefault();
 
         // 高さ調整
-        $('.article-list .items').each(function(i){
-            if ($(this).attr('aria-hidden') == "false") {
-                console.log($(this).height());
-                $('.bx-viewport').css('height', $(this).height())
-            }
-        });
+        set_height();
 
     })
 
@@ -84,13 +79,20 @@ $(document).ready(function() {
     $(window).on('load', function() {
 
         nth = location.hash.replace("#tab-", "");
-        if (nth == "" || !$.isNumeric(nth)){
+        if (nth == "" || !$.isNumeric(nth)) {
             nth = 0
         };
-        console.log(nth);
         slider.goToSlide(nth);
         $("div.tab__button").eq(nth).addClass("tab__button_current");
+        // 高さ調整
+        set_height();
     });
 
-
+    var set_height = function() {
+        $('.article-list .items').each(function(i) {
+            if ($(this).attr('aria-hidden') == "false") {
+                $('.bx-viewport').css('height', $(this).height())
+            }
+        });
+    }
 });
