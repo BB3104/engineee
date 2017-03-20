@@ -70,6 +70,14 @@ $(document).ready(function() {
         //クリックイベントを無効化
         e.preventDefault();
 
+        // 高さ調整
+        $('.article-list .items').each(function(i){
+            if ($(this).attr('aria-hidden') == "false") {
+                console.log($(this).height());
+                $('.bx-viewport').css('height', $(this).height())
+            }
+        });
+
     })
 
     // ブラウザバックした場合、選択中のタブに移動
@@ -83,5 +91,6 @@ $(document).ready(function() {
         slider.goToSlide(nth);
         $("div.tab__button").eq(nth).addClass("tab__button_current");
     });
+
 
 });

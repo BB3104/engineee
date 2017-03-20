@@ -11,10 +11,25 @@
         <link rel="apple-touch-icon" href="/icon/icon.png">
         <%= stylesheet_link_tag    'application', media: 'all' %>
         <%= javascript_include_tag 'application' %>
+      <% if Rails.env.production? %>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-93983879-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+      <% end %>
     </head>
 
     <body>
-        <div></div>
+        <div class="banner-top">
+<a href="https://rpx.a8.net/svt/ejp?a8mat=2TEK4H+2UEKTU+2HOM+686ZL&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa17032094639_2TEK4H_2UEKTU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow">
+<img src="http://hbb.afl.rakuten.co.jp/hsb/0eb4bbc0.254a14a3.0eb4bbaa.95151395/" border="0"></a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2TEK4H+2UEKTU+2HOM+686ZL" alt="">
+        </div>
         <div id="global-navi">
             <header class="header">
                 <div id="top">
@@ -70,6 +85,8 @@
         </div>
     </article>
     <p id="page-top"><a href="#wrap">PAGE TOP</a></p>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div align="center">copyright &copy; IT速報 Engineee All Rights Reserved. </div>
+    </footer>
 </body>
 </html>
