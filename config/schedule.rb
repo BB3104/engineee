@@ -29,17 +29,51 @@ set :environment, rails_env
 
 
 # 一時間毎のスケジューリング
-every :hour do # Many shortcuts available: :hour, :day, :month, :year, :reboot
-# every '*/1 * * * *' do
+# every :hour do # Many shortcuts available: :hour, :day, :month, :year, :reboot
+# # every '*/1 * * * *' do
+#   rake 'update_gigazine_feed:exec'
+#   rake 'update_cnet_feed:exec'
+#   rake 'update_appgiga_feed:exec'
+#   rake 'update_itmedia_feed:exec'
+#   rake 'update_itmatome_feed:exec'
+#   rake 'update_engadget_feed:exec'
+#   rake 'update_buildinsider_feed:exec'
+#   rake 'update_codezine_feed:exec'
+#   rake 'update_getnews_feed:exec'
+#   rake 'update_nelog_feed:exec'
+#   rake 'update_techcrunch_feed:exec'
+# end
+
+every '0 * * * *' do
   rake 'update_gigazine_feed:exec'
+end
+every '1 * * * *' do
   rake 'update_cnet_feed:exec'
+end
+every '2 * * * *' do
   rake 'update_appgiga_feed:exec'
+end
+every '3 * * * *' do
   rake 'update_itmedia_feed:exec'
+end
+every '4 * * * *' do
   rake 'update_itmatome_feed:exec'
+end
+every '5 * * * *' do
   rake 'update_engadget_feed:exec'
+end
+every '6 * * * *' do
   rake 'update_buildinsider_feed:exec'
+end
+every '7 * * * *' do
   rake 'update_codezine_feed:exec'
+end
+every '8 * * * *' do
   rake 'update_getnews_feed:exec'
+end
+every '9 * * * *' do
   rake 'update_nelog_feed:exec'
+end
+every '*10 * * * *' do
   rake 'update_techcrunch_feed:exec'
 end
