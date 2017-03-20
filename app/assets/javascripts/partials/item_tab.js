@@ -18,7 +18,7 @@ $(document).ready(function() {
         pager: false,
         controls: false,
         touchEnabled: true, // モバイルのスワイプ
-        swipeThreshold: 130, //スワイプ操作として処理される最小の移動距離
+        swipeThreshold: 120, //スワイプ操作として処理される最小の移動距離
         onSlideBefore: function($slideElement, oldIndex, newIndex) {
             //スライドする時に関数を呼び出す。newIndexはスライダーの現在地。
             slideChange(newIndex);
@@ -48,6 +48,8 @@ $(document).ready(function() {
         } else {
             history.replaceState(null, 'title', location.protocol + '//' + location.host + location.pathname + location.search);
         };
+        // 高さ調整
+        set_height();
     }
 
     /******************************************
