@@ -17,8 +17,8 @@ $(document).ready(function() {
     var slider = $('.article-list').bxSlider({
         pager: false,
         controls: false,
-        touchEnabled: false, // モバイルのスワイプ
-        // swipeThreshold: 130, //スワイプ操作として処理される最小の移動距離
+        touchEnabled: true, // モバイルのスワイプ
+        swipeThreshold: 130, //スワイプ操作として処理される最小の移動距離
         onSlideBefore: function($slideElement, oldIndex, newIndex) {
             //スライドする時に関数を呼び出す。newIndexはスライダーの現在地。
             slideChange(newIndex);
