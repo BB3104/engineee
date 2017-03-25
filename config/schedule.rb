@@ -77,3 +77,6 @@ end
 every '*10 * * * *' do
   rake 'update_techcrunch_feed:exec'
 end
+every '*11 * * * *' do
+  rake 'update_itmatmarkit_feed:exec'
+end
