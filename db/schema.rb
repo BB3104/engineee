@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320034800) do
+ActiveRecord::Schema.define(version: 20170325064003) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -134,6 +134,21 @@ ActiveRecord::Schema.define(version: 20170320034800) do
   end
 
   create_table "rss_gigazines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "media_title"
+    t.string   "title"
+    t.text     "content",              limit: 65535
+    t.text     "description",          limit: 65535
+    t.string   "image"
+    t.text     "url",                  limit: 65535
+    t.string   "author"
+    t.string   "guid"
+    t.datetime "content_published_at"
+    t.datetime "content_updated_at"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  create_table "rss_itmatmarkits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "media_title"
     t.string   "title"
     t.text     "content",              limit: 65535

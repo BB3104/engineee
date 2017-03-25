@@ -1,0 +1,21 @@
+<div class="items">
+    <% @rss_itmatmarkits.each do |itmatmarkit| %>
+    <div class="item-list">
+      <% if itmatmarkit.image.present? %>
+        <div class="list-thumb">
+            <%= image_tag(itmatmarkit.image)%>
+        </div>
+      <%end%>
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(itmatmarkit.title, itmatmarkit.url)%>
+            </div>
+            <div class="list-date">
+                <%= itmatmarkit.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(itmatmarkit.description) %>
+    </div>
+    <%end%>
+</div>

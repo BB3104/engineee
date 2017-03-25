@@ -14,6 +14,9 @@ class IndexController < ApplicationController
     @rss_itmedias = Rails.cache.fetch('itmedia', expires_in: cache_expire) do
       RssItmedia.order_newest.limit(@limit_cnt)
     end
+    @rss_itmatmarkits = Rails.cache.fetch('itmatmarkit', expires_in: cache_expire) do
+      RssItmatmarkit.order_newest.limit(@limit_cnt)
+    end
     @rss_cnets = Rails.cache.fetch('cnet', expires_in: cache_expire) do
       RssCnet.order_newest.limit(@limit_cnt)
     end
@@ -39,7 +42,7 @@ class IndexController < ApplicationController
       RssItmatome.order_newest.limit(@limit_cnt)
     end
 
-    @new_arrivals = @rss_itmedias + @rss_cnets + @rss_engadgets + @rss_techcrunchs + @rss_getnews + @rss_appgigas + @rss_codezines + @rss_nelogs + @rss_buildinsiders + @rss_itmatomes
+    @new_arrivals = @rss_itmedias + @rss_itmatmarkits + @rss_cnets + @rss_engadgets + @rss_techcrunchs + @rss_getnews + @rss_appgigas + @rss_codezines + @rss_nelogs + @rss_buildinsiders + @rss_itmatomes
     @new_arrivals.sort! do |a, b|
       b[:content_published_at] <=> a[:content_published_at]
     end

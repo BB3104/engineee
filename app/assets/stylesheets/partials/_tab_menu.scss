@@ -104,22 +104,26 @@
 }
 .tab__button:nth-child(8).tab__button_current,
 .tab__button:nth-child(8).tab__button_current:after {
-    background: $tab-color-gigazine;
+    background: $tab-color-itmatmarkit;
 }
 .tab__button:nth-child(9).tab__button_current,
 .tab__button:nth-child(9).tab__button_current:after {
-    background: $tab-color-techcrunch;
+    background: $tab-color-gigazine;
 }
 .tab__button:nth-child(10).tab__button_current,
 .tab__button:nth-child(10).tab__button_current:after {
-    background: $tab-color-engaget;
+    background: $tab-color-techcrunch;
 }
 .tab__button:nth-child(11).tab__button_current,
 .tab__button:nth-child(11).tab__button_current:after {
-    background: $tab-color-cnet;
+    background: $tab-color-engaget;
 }
 .tab__button:nth-child(12).tab__button_current,
 .tab__button:nth-child(12).tab__button_current:after {
+    background: $tab-color-cnet;
+}
+.tab__button:nth-child(13).tab__button_current,
+.tab__button:nth-child(13).tab__button_current:after {
     background: $tab-color-itmatome;
 }
 
