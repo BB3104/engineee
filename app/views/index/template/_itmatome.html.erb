@@ -1,11 +1,6 @@
 <div class="items">
     <% @rss_itmatomes.each do |itmatome| %>
     <div class="item-list">
-      <% if itmatome.image.present? %>
-        <div class="list-thumb">
-            <%= image_tag(itmatome.image)%>
-        </div>
-      <%end%>
         <div class="list-text">
 
             <div class="list-title">
