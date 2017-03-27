@@ -19,7 +19,11 @@ $(document).ready(function() {
         pager: false,
         controls: false,
         touchEnabled: true, // モバイルのスワイプ
-        // swipeThreshold: 110, //スワイプ操作として処理される最小の移動距離
+        swipeThreshold: 80, //スワイプ操作として処理される最小の移動距離
+        // preventDefaultSwipeY:false,
+        preloadImages: 'visible',
+        // preventDefaultSwipeX: false,
+        oneToOneTouch: false,
         onSlideBefore: function($slideElement, oldIndex, newIndex) {
             //スライドする時に関数を呼び出す。newIndexはスライダーの現在地。
             slideChange(newIndex);
