@@ -4,6 +4,15 @@
 header {
 	width: 100%;
 	overflow: hidden;
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
 }
 /*	タイトル	*/
 #top h1 {
@@ -25,6 +34,6 @@ header h2 {
 
 .banner-top {
 	width: 100% !important;
-	margin: 10px 0 10px 0;
+	margin: 10px 0;
 	text-align: center;
 }
