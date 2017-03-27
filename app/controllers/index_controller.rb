@@ -1,8 +1,8 @@
 class IndexController < ApplicationController
   def index
-    @limit_cnt = 50
+    @limit_cnt = 20
+    @limit_cnt_arrival = 40
 
-    cache_key = 'appgiga'
     cache_expire = 15.minutes
     # binding.pry
     @rss_appgigas = Rails.cache.fetch('appgiga', expires_in: cache_expire) do
