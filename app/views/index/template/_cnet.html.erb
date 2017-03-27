@@ -3,7 +3,7 @@
     <div class="item-list">
       <% if cnet.image.present? %>
         <div class="list-thumb">
-            <%= image_tag(cnet.image)%>
+            <%= image_tag(cnet.image, class: "lazy", "data-original": cnet.image) %>
         </div>
       <%end%>
         <div class="list-text">

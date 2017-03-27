@@ -3,7 +3,7 @@
     <div class="item-list">
       <% if codezine.image.present? %>
         <div class="list-thumb">
-            <%= image_tag(codezine.image)%>
+            <%= image_tag(codezine.image, class: "lazy", "data-original": codezine.image) %>
         </div>
       <%end%>
         <div class="list-text">

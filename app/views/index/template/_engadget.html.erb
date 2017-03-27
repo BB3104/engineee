@@ -3,7 +3,7 @@
     <div class="item-list">
       <% if engadget.image.present? %>
         <div class="list-thumb">
-            <%= image_tag(engadget.image)%>
+            <%= image_tag(engadget.image, class: "lazy", "data-original": engadget.image) %>
         </div>
       <%end%>
         <div class="list-text">

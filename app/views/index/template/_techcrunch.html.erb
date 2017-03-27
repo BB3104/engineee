@@ -3,7 +3,7 @@
     <div class="item-list">
       <% if techcrunch.image.present? %>
         <div class="list-thumb">
-            <%= image_tag(techcrunch.image)%>
+            <%= image_tag(techcrunch.image, class: "lazy", "data-original": techcrunch.image) %>
         </div>
       <%end%>
         <div class="list-text">

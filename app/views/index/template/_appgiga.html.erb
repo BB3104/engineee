@@ -3,7 +3,7 @@
     <div class="item-list">
       <% if appgiga.image.present? %>
         <div class="list-thumb">
-            <%= image_tag(appgiga.image)%>
+            <%= image_tag(appgiga.image, class: "lazy", "data-original": appgiga.image)%>
         </div>
       <%end%>
         <div class="list-text">

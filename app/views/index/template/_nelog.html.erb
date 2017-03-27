@@ -3,7 +3,7 @@
     <div class="item-list">
       <% if nelog.image.present? %>
         <div class="list-thumb">
-            <%= image_tag(nelog.image)%>
+            <%= image_tag(nelog.image, class: "lazy", "data-original": nelog.image) %>
         </div>
       <%end%>
         <div class="list-text">

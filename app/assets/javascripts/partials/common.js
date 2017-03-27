@@ -29,6 +29,7 @@ $(function() {
     return false;
   });
 
+  // フッターバナー
   $('.banner-bottom').overlayAd({
     'position': 'bottom',
     'mobileStyle': 'trimming',
@@ -37,4 +38,10 @@ $(function() {
     'backgroundColor': 'none'
   });
 
+  // 画像遅延表示
+  $("img.lazy").lazyload({
+    threshold: 200,
+    effect: "fadeIn",
+    effect_speed: 2000
+  });
 });

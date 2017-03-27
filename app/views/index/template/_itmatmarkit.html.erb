@@ -3,7 +3,7 @@
     <div class="item-list">
       <% if itmatmarkit.image.present? %>
         <div class="list-thumb">
-            <%= image_tag(itmatmarkit.image)%>
+            <%= image_tag(itmatmarkit.image, class: "lazy", "data-original": itmatmarkit.image) %>
         </div>
       <%end%>
         <div class="list-text">

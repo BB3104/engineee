@@ -3,7 +3,7 @@
     <div class="item-list">
       <% if getnews.image.present? %>
         <div class="list-thumb">
-            <%= image_tag(getnews.image)%>
+            <%= image_tag(getnews.image, class: "lazy", "data-original": getnews.image) %>
         </div>
       <%end%>
         <div class="list-text">
