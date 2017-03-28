@@ -72,7 +72,7 @@ every '8 * * * *' do
   rake 'update_getnews_feed:exec'
 end
 every '9 * * * *' do
-  rake 'update_nelog_feed:exec'
+  rake 'update_gizmodo_feed:exec'
 end
 every '*10 * * * *' do
   rake 'update_techcrunch_feed:exec'
