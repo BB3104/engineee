@@ -13,6 +13,8 @@ header {
 	a:hover {
 		text-decoration: none;
 	}
+	// background: #fff;
+	z-index: 1
 }
 /*	タイトル	*/
 #top h1 {
@@ -26,6 +28,7 @@ header {
 	border-bottom: solid 1px #11120F;
 	color: #FFF;
 	text-shadow: 1px 1px 1px #11120F;
+	// font-size: 30px;
 }
 /*	ヘッダー画像下 文字	*/
 header h2 {
@@ -34,6 +37,7 @@ header h2 {
 
 .banner-top {
 	width: 100% !important;
-	margin: 10px 0;
+	// margin: 10px 0;
+	padding: 10px 0;
 	text-align: center;
 }

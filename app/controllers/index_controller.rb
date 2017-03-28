@@ -32,8 +32,11 @@ class IndexController < ApplicationController
     @rss_codezines = Rails.cache.fetch('codezine', expires_in: cache_expire) do
       RssCodezine.order_newest.limit(@limit_cnt)
     end
-    @rss_nelogs = Rails.cache.fetch('nelog', expires_in: cache_expire) do
-      RssNelog.order_newest.limit(@limit_cnt)
+    # @rss_nelogs = Rails.cache.fetch('nelog', expires_in: cache_expire) do
+    #   RssNelog.order_newest.limit(@limit_cnt)
+    # end
+    @rss_gizmodos = Rails.cache.fetch('gizmodo', expires_in: cache_expire) do
+      RssGizmodo.order_newest.limit(@limit_cnt)
     end
     @rss_buildinsiders = Rails.cache.fetch('buildinsider', expires_in: cache_expire) do
       RssBuildinsider.order_newest.limit(@limit_cnt)
@@ -42,7 +45,7 @@ class IndexController < ApplicationController
       RssItmatome.order_newest.limit(@limit_cnt)
     end
 
-    @new_arrivals = @rss_itmedias + @rss_itmatmarkits + @rss_cnets + @rss_engadgets + @rss_techcrunchs + @rss_getnews + @rss_appgigas + @rss_codezines + @rss_nelogs + @rss_buildinsiders + @rss_itmatomes
+    @new_arrivals = @rss_itmedias + @rss_itmatmarkits + @rss_cnets + @rss_engadgets + @rss_techcrunchs + @rss_getnews + @rss_appgigas + @rss_codezines + @rss_gizmodos + @rss_buildinsiders + @rss_itmatomes
     @new_arrivals.sort! do |a, b|
       b[:content_published_at] <=> a[:content_published_at]
     end

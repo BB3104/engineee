@@ -1,0 +1,16 @@
+<div class="items">
+    <% @rss_gizmodos.each do |gizmodo| %>
+    <div class="item-list">
+        <div class="list-text">
+
+            <div class="list-title">
+                <%= link_to(gizmodo.title, gizmodo.url)%>
+            </div>
+            <div class="list-date">
+                <%= gizmodo.content_published_at %>
+            </div>
+        </div>
+        <%#= raw(gizmodo.description) %>
+    </div>
+    <%end%>
+</div>

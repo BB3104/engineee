@@ -1,5 +1,5 @@
 <div class="items">
-    <% @new_arrivals[0...from_cnt].each do |arrival| %>
+    <% @new_arrivals[0...from_cnt].each.with_index do |arrival, index| %>
     <div class="item-list">
         <% if arrival.image.present? %>
         <div class="list-thumb">
@@ -17,5 +17,14 @@
         </div>
         <%#= raw(techcrunch.description) %>
     </div>
+    <%# banner %>
+    <% if index % 10 == 0 %>
+    <div class="item-list in_banner">
+        <!-- admax -->
+        <script src="//adm.shinobi.jp/s/a5510c10c9c83f13bc1d3eb468a69d26"></script>
+        <!-- admax -->
+    </div>
+    <%# banner %>
+    <% end %>
     <%end%>
 </div>

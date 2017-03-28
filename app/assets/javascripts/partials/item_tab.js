@@ -101,7 +101,8 @@ $(document).ready(function() {
     var set_height = function() {
         $('.article-list .items').each(function(i) {
             if ($(this).attr('aria-hidden') == "false") {
-                $('.bx-viewport').css('height', $(this).height())
+                // 100は余白
+                $('.bx-viewport').css('height', $(this).height() + 100)
             }
         });
     };
