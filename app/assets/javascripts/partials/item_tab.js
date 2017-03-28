@@ -18,8 +18,8 @@ $(document).ready(function() {
         speed: 300,
         pager: false,
         controls: false,
-        touchEnabled: true, // モバイルのスワイプ
-        swipeThreshold: 70, //スワイプ操作として処理される最小の移動距離
+        touchEnabled: false, // モバイルのスワイプ
+        // swipeThreshold: 70, //スワイプ操作として処理される最小の移動距離
         // preventDefaultSwipeY:false,
         preloadImages: 'visible',
         // preventDefaultSwipeX: false,
