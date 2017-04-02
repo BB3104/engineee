@@ -1,5 +1,5 @@
 <div class="article-list">
-<% cache "views_rss_data", expires_in: 30.minutes, skip_digest: true do %>
+<%# cache "views_rss_data", expires_in: 30.minutes, skip_digest: true do %>
     <%= render partial: "index/template/new_arrival", locals: { new_arrivals: @new_arrivals, from_cnt: @limit_cnt_arrival } %>
     <%= render partial: "index/template/getnews", locals: { rss_getnews: @rss_getnews } %>
     <%= render partial: "index/template/appgiga", locals: { rss_appgigas: @rss_appgigas } %>
@@ -14,5 +14,5 @@
     <%= render partial: "index/template/engadget", locals: { rss_engadgets: @rss_engadgets } %>
     <%= render partial: "index/template/cnet", locals: { rss_cnets: @rss_cnets } %>
     <%= render partial: "index/template/itmatome", locals: { rss_itmatomes: @rss_itmatomes } %>
-<% end %>
+<%# end %>
 </div>
