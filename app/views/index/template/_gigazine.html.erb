@@ -1,7 +1,7 @@
 <div class="items">
     <% @rss_gigazines.each do |gigazine| %>
     <div class="item-list">
-      <% if gigazine.image.present? %>
+      <% if gigazine.image.present? && request.from_pc? %>
         <div class="list-thumb">
             <%= image_tag(gigazine.image, class: "lazy", "data-original": gigazine.image) %>
         </div>

@@ -1,7 +1,7 @@
 <div class="items">
     <% @rss_itmatmarkits.each do |itmatmarkit| %>
     <div class="item-list">
-      <% if itmatmarkit.image.present? %>
+      <% if itmatmarkit.image.present? && request.from_pc? %>
         <div class="list-thumb">
             <%= image_tag(itmatmarkit.image, class: "lazy", "data-original": itmatmarkit.image) %>
         </div>

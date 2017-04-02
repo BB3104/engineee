@@ -1,7 +1,7 @@
 <div class="items">
     <% @new_arrivals[0...from_cnt].each.with_index do |arrival, index| %>
     <div class="item-list">
-        <% if arrival.image.present? %>
+        <% if arrival.image.present? && request.from_pc? %>
         <div class="list-thumb">
             <%= image_tag(arrival.image, class: "lazy", "data-original": arrival.image)%>
         </div>

@@ -1,7 +1,7 @@
 <div class="items">
     <% @rss_getnews.each do |getnews| %>
     <div class="item-list">
-      <% if getnews.image.present? %>
+      <% if getnews.image.present? && request.from_pc? %>
         <div class="list-thumb">
             <%= image_tag(getnews.image, class: "lazy", "data-original": getnews.image) %>
         </div>

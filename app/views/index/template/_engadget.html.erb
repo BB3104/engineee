@@ -1,7 +1,7 @@
 <div class="items">
     <% @rss_engadgets.each do |engadget| %>
     <div class="item-list">
-      <% if engadget.image.present? %>
+      <% if engadget.image.present? && request.from_pc? %>
         <div class="list-thumb">
             <%= image_tag(engadget.image, class: "lazy", "data-original": engadget.image) %>
         </div>

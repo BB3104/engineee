@@ -1,7 +1,7 @@
 <div class="items">
     <% @rss_codezines.each do |codezine| %>
     <div class="item-list">
-      <% if codezine.image.present? %>
+      <% if codezine.image.present? && request.from_pc? %>
         <div class="list-thumb">
             <%= image_tag(codezine.image, class: "lazy", "data-original": codezine.image) %>
         </div>

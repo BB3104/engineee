@@ -1,7 +1,7 @@
 <div class="items">
     <% @rss_nelogs.each do |nelog| %>
     <div class="item-list">
-      <% if nelog.image.present? %>
+      <% if nelog.image.present? && request.from_pc? %>
         <div class="list-thumb">
             <%= image_tag(nelog.image, class: "lazy", "data-original": nelog.image) %>
         </div>

@@ -1,7 +1,7 @@
 <div class="items">
     <% @rss_cnets.each do |cnet| %>
     <div class="item-list">
-      <% if cnet.image.present? %>
+      <% if cnet.image.present? && request.from_pc? %>
         <div class="list-thumb">
             <%= image_tag(cnet.image, class: "lazy", "data-original": cnet.image) %>
         </div>
