@@ -10,232 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328134402) do
+ActiveRecord::Schema.define(version: 2019_03_29_163056) do
 
-  create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "namespace"
-    t.text     "body",          limit: 65535
-    t.string   "resource_id",                 null: false
-    t.string   "resource_type",               null: false
-    t.string   "author_type"
-    t.integer  "author_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  create_table "active_admin_comments", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_id", null: false
+    t.string "resource_type", null: false
+    t.string "author_type"
+    t.integer "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "admin_users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "rss_appgigas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
+  create_table "rss_articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "rss_type_id"
+    t.string "media_title"
+    t.string "title"
+    t.text "content"
+    t.text "description"
+    t.string "image"
+    t.text "url"
+    t.string "author"
+    t.string "guid"
     t.datetime "content_published_at"
     t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rss_type_id"], name: "index_rss_articles_on_rss_type_id"
   end
 
-  create_table "rss_buildinsiders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+  create_table "rss_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "site_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["site_name"], name: "index_rss_types_on_site_name", unique: true
   end
 
-  create_table "rss_cnets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_codezines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_engadgets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_getnews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_gigazines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_gizmodos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_itmatmarkits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_itmatomes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_itmedia", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_nelogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "rss_techcrunches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "media_title"
-    t.string   "title"
-    t.text     "content",              limit: 65535
-    t.text     "description",          limit: 65535
-    t.string   "image"
-    t.text     "url",                  limit: 65535
-    t.string   "author"
-    t.string   "guid"
-    t.datetime "content_published_at"
-    t.datetime "content_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
+  add_foreign_key "rss_articles", "rss_types"
 end

@@ -1,18 +1,12 @@
 <div class="article-list">
-<%# cache "views_rss_data", expires_in: 30.minutes, skip_digest: true do %>
-    <%= render partial: "index/template/new_arrival", locals: { new_arrivals: @new_arrivals, from_cnt: @limit_cnt_arrival } %>
     <%= render partial: "index/template/getnews", locals: { rss_getnews: @rss_getnews } %>
-    <%= render partial: "index/template/appgiga", locals: { rss_appgigas: @rss_appgigas } %>
     <%= render partial: "index/template/codezine", locals: { rss_codezines: @rss_codezines } %>
-    <%#= render partial: "index/template/nelog", locals: { rss_nelogs: @rss_nelogs } %>
     <%= render partial: "index/template/gizmodo", locals: { rss_gizmodos: @rss_gizmodos } %>
     <%= render partial: "index/template/buildinsider", locals: { rss_buildinsiders: @rss_buildinsiders } %>
     <%= render partial: "index/template/itmedia", locals: { rss_itmedias: @rss_itmedias } %>
-    <%= render partial: "index/template/itmatmarkit", locals: { rss_itmatmarkits: @rss_itmatmarkits } %>
     <%= render partial: "index/template/gigazine", locals: { rss_gigazines: @rss_gigazines } %>
     <%= render partial: "index/template/techcrunch", locals: { rss_techcrunchs: @rss_techcrunchs } %>
     <%= render partial: "index/template/engadget", locals: { rss_engadgets: @rss_engadgets } %>
     <%= render partial: "index/template/cnet", locals: { rss_cnets: @rss_cnets } %>
     <%= render partial: "index/template/itmatome", locals: { rss_itmatomes: @rss_itmatomes } %>
-<%# end %>
 </div>

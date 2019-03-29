@@ -1,0 +1,33 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+    - 'Gemfile'
+    - 'config.ru'
+# for Rails
+Rails:
+  Enabled: true
+# Japanese comment enabled
+AsciiComments:
+  Enabled: false
+# Limit lines to 80 characters.
+LineLength:
+  Max: 100
+  Enabled: true
+# Limit Lines in method(default is 10 lines)
+Metrics/MethodLength:
+  #Max: 22
+  Enabled: false
+# Format for defining classes within a class
+ClassAndModuleChildren:
+  EnforcedStyle: compact
+Metrics/AbcSize:
+  #Max: 30
+  Enabled: false
+Metrics/ClassLength:
+  CountComments: false  # count full line comments?
+  Max: 150
+

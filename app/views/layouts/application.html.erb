@@ -33,7 +33,7 @@
                 m.parentNode.insertBefore(a, m)
             })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', 'UA-93983879-1', 'auto');
+            ga('create', '<%= Settings[:ga][:ua] %>', 'auto');
             ga('send', 'pageview');
         </script>
         <% end %>
@@ -51,10 +51,10 @@
         <div id="global-navi">
             <div class="banner-top">
                 <!-- admax -->
-                <script src="//adm.shinobi.jp/s/589ad079dd5d60f5c62b9f4835dd7b30"></script>
+                <script src="//adm.shinobi.jp/s/<%= Settings[:a8net][:key_1] %>'"></script>
                 <!-- admax -->
                 <!-- admax -->
-                <script src="//adm.shinobi.jp/s/a5510c10c9c83f13bc1d3eb468a69d26"></script>
+                <script src="//adm.shinobi.jp/s/<%= Settings[:a8net][:key_2] %>"></script>
                 <!-- admax -->
             </div>
 
@@ -67,14 +67,8 @@
                         <a href="#">ガジェット通信</a>
                     </div>
                     <div class="tab__button">
-                        <a href="#">アプギガ!!</a>
-                    </div>
-                    <div class="tab__button">
                         <a href="#">Codezine</a>
                     </div>
-                    <!-- <div class="tab__button">
-                        <a href="#">寝ログ</a>
-                    </div> -->
                     <div class="tab__button">
                         <a href="#">ギズモード・ジャパン</a>
                     </div>
@@ -83,9 +77,6 @@
                     </div>
                     <div class="tab__button">
                         <a href="#">ITmedia</a>
-                    </div>
-                    <div class="tab__button">
-                        <a href="#">@IT</a>
                     </div>
                     <div class="tab__button">
                         <a href="#">Gigazine</a>
@@ -116,7 +107,7 @@
         <a href="#wrap">PAGE TOP</a>
     </p>
     <div class="banner-bottom">
-        <script type="text/javascript" src="//rot7.a8.net/jsa/7664f88abcdcbb4ce625929608c00191/dc5c7986daef50c1e02ab09b442ee34f.js"></script>
+        <script type="text/javascript" src="//rot7.a8.net/jsa/<%= Settings[:a8net][:key_3] %>/dc5c7986daef50c1e02ab09b442ee34f.js"></script>
     </div>
     <footer class="footer">
         <div align="center">copyright &copy; IT速報 Engineee All Rights Reserved.

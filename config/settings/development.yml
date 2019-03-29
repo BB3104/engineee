@@ -3,3 +3,11 @@ db:
   port: '3306'
   username: 'root'
   password: ''
+
+ga:
+  ua: 'UA-xxxxxxxxx-1'
+
+a8net:
+  key_1: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  key_2: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  key_3: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
