@@ -1,0 +1,58 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      TZ: Asia/Tokyo
+      RAILS_ENV: development
+      RACK_ENV: development
+      RSPEC_ENV: test
+      DATABASE_NAME: engineee
+      DATABASE_USER: user
+      DATABASE_PASS: pass
+      DATABASE_HOST: db
+      DATABASE_PORT: 3306
+      REDIS_HOST: redis
+      RAILS_MAX_THREADS: 5
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+      - redis
+    tty: true
+    stdin_open: true
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root-pass
+      MYSQL_DATABASE: engineee
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    ports:
+      - '13306:3306'
+    volumes_from:
+      - data
+
+  redis:
+    image: redis:alpine
+    ports:
+    - '6379:6379'
+
+  data:
+    image: "busybox"
+    volumes:
+      - "db:/var/lib/mysql"
+
+volumes:
+  bundle:
+    driver: local
+  db:
+    driver: local
+
+
